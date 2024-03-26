@@ -5,6 +5,10 @@ Discord bot for fetching cybersecurity news from multiple sources.
 ### Environment
 1. Install Node.js: [instructions](https://nodejs.org/en/download/package-manager)
 2. Create `.env` file, see `.env.example` for contents
+3. Install packages:
+```sh
+$ npm install discord.js rss-parser
+```
 
 ### Running the bot
 Run the bot via:
