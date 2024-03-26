@@ -1,5 +1,5 @@
-# Cybersecurity News Bot
-Discord bot for fetching cybersecurity news from multiple sources.
+# News Bot
+Discord bot for fetching (cybersecurity) news from multiple sources.
 
 ## Set up
 ### Environment
@@ -15,6 +15,9 @@ Run the bot via:
 ```sh
 $ node --env-file=.env main.js
 ```
-s
+
+### Adding/removing news feeds
+You can add and remove rss feeds using the `feeds` dictionary in `main.js`.
+
 ### Discord configuration
 See the first steps from [Discord's developers guide](https://discord.com/developers/docs/quick-start/getting-started).
