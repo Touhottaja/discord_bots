@@ -82,7 +82,7 @@ setInterval(() => {
 
 // Clear read news every 24 hours
 setInterval(() => {
-    for (let feed_name in Feeds) {
+    for (let feed_name in feeds) {
         Feeds[feed_name].read_news = [];
     }
 }, clearReadNewsIntervalMin * 60 * 1000);
