@@ -5,7 +5,7 @@ Documentation=https://github.com/Touhottaja/discord_bots/tree/main/news_bot
 [Service]
 EnvironmentFile=[<Path to this directory>]/.env
 Type=simple
-User=%i
+User=[<Your user>]
 WorkingDirectory=[<Path to this directory>]
 ExecStart=[<Path to node>] [<Path to this directory>]/main.js
 Restart=on-failure
