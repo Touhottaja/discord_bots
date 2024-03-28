@@ -23,8 +23,8 @@ const feeds = {
 
 const NEWS_READ_CNT = 1; // How many news are read from the rss feed
 const CHECK_NEWS_INTERVAL_MIN = 60 * 5 * 1000; // 5 mins
+const MSG_DELETE_TIME_MIN = 60 * 60 * 12 * 1000; // 12 hours
 const CLEAR_READ_NEWS_INTERVAL_MIN = 60 * 60 * 24 * 1000; // 24 hours
-
 let channel;
 
 client.on("ready", () => {
@@ -62,13 +62,13 @@ async function read_news(feed_name, feed_dict) {
     // Parse titles and links
     news = news.map(item => `${item.title}: ${item.link}`);
 
-
     // Remove already read news
     news = news.filter(item => !feed_dict.read_news.includes(item));
 
     // Send news to the channel
     if (news.length > 0) {
-        channel.send(news.join("\n"));
+        channel.send(news.join("\n"))
+            .then(msg => setTimeout(() => msg.delete(), MSG_DELETE_TIME_MIN));
     } else {
         console.log(`[News Bot] No news from ${feed_name}`);
     }
